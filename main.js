@@ -18,6 +18,8 @@ const SubZero = {
     }
 }
 
+const $arena = document.querySelector('.arenas');
+
 const createPlayer = (player, obj) => {
     const $player = document.createElement('div');
     $player.classList.add(player);
@@ -30,8 +32,7 @@ const createPlayer = (player, obj) => {
 
     const $life = document.createElement('div');
     $life.classList.add('life');
-    $life.textContent = obj.hp;
-    $life.style.width = 100 + '%';
+    $life.style.width = obj.hp + '%';
 
     const $name = document.createElement('div');
     $name.classList.add('name');
@@ -39,8 +40,6 @@ const createPlayer = (player, obj) => {
 
     const $img = document.createElement('img');
     $img.src = obj.img;
-
-    const $arena = document.querySelector('.arenas');
 
     $arena.appendChild($player);
     $player.appendChild($progressBar);
